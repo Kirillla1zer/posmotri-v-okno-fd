@@ -63,7 +63,6 @@ ol {
   grid-area: result;
   gap: 16px;
   min-width: 711px;
-  min-height: 456px;
   margin-top: 78px;
 }
 
@@ -77,6 +76,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__details {
@@ -84,7 +84,6 @@ ol {
   flex-direction: column;
   grid-area: content__details;
   gap: 22px;
-  min-height: 534px;
 }
 
 .title {
@@ -124,58 +123,39 @@ ol {
 }
 
 .more-button {
-  width: 100%;
+  max-width: 390px;
   margin-top: 30px;
-  margin-right: 7px;
+  margin-right: 3px;
   margin-bottom: 2px;
   margin-left: 2px;
-  padding: 6px 142px;
+  padding: 6px 140px;
 }
 
-.more-button:focus {
+.button:focus {
   outline: none;
 }
 
-.more-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid rgba(255, 255, 255, 1);
   outline-offset: 1px;
 }
 
-.more-button:hover {
+.button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.more-button:active {
+.button:active {
   text-decoration: none;
   background-color: rgba(84, 80, 80, 1);
 }
 
 .search-form__submit-button {
   justify-self: end; /* Зачем если я задал для контейнера space-between? */
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
+  min-height: 34px;
   margin-top: 20px;
   padding: 6px 73.5px;
-}
-
-.search-form__submit-button:focus {
-  outline: none;
-}
-
-.search-form__submit-button:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, 1);
-  outline-offset: 1px;
-}
-
-.search-form__submit-button:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.search-form__submit-button:active {
-  text-decoration: none;
-  background-color: rgba(84, 80, 80, 1);
 }
 
 .content__card-link_current .content__video-card {
@@ -185,8 +165,7 @@ ol {
 .content__list-container {
   gap: 30px;
   height: 298px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .content__list {
@@ -202,6 +181,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
 }
 
@@ -216,18 +196,17 @@ ol {
   flex-grow: 1;
   gap: 6px;
   max-width: 196px;
-  height: 103px;
 }
 
-.content__video-card-description-container:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-color: white;
   text-underline-offset: 1.45px;
 }
 
-.content__video-card-description-container:active {
+.content__card-link:active {
   text-decoration: none;
-  background-color: rgba(84, 80, 80, 1);
+  background-color: rgb(84, 80, 81);
 }
 
 .content__video-card-thumbnail {
@@ -240,7 +219,6 @@ ol {
 
 .content__video-card-title {
   width: 196px;
-  height: 30px;
   overflow: hidden;
   color: rgb(255, 255, 255, 1);
   font-family: "Oswald", sans-serif;
@@ -256,7 +234,6 @@ ol {
 .content__video-card-description {
   display: -webkit-box;
   width: 196px;
-  max-height: 67px;
   overflow: hidden;
   color: rgb(255, 255, 255, 1);
   font-family: "Fira Sans Condensed", sans-serif;
@@ -278,7 +255,7 @@ ol {
 
 .search-form__textfield {
   width: 100%;
-  width: 225px;
+  min-width: 225px;
   border-top: 1px solid white;
   border-right: 1px solid transparent;
   border-bottom: 1px solid white;
@@ -320,7 +297,6 @@ ol {
 }
 
 .search-form__fieldset-title {
-  height: 22px;
   margin-bottom: 5px;
   color: rgba(255, 255, 255, 1);
   font-family: "Fira Sans Condensed", sans-serif;
@@ -362,6 +338,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   justify-content: center;
   align-items: center;
   width: fit-content;
+  cursor: pointer;
 }
 
 .search-form__label-text {
@@ -380,10 +357,6 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 .search-form__label:active .search-form__label-text {
   text-decoration: none;
-  cursor: pointer;
-}
-
-.search-form__label {
   cursor: pointer;
 }
 
